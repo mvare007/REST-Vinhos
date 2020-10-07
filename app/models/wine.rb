@@ -1,6 +1,8 @@
 class Wine < ApplicationRecord
   include PgSearch
 
+  has_one_attached :photo
+
   validates :name, presence: true, uniqueness: true
   validates :description, presence: true
 
@@ -8,8 +10,8 @@ class Wine < ApplicationRecord
     using: {
       tsearch: {
         any_word: true,
-        prefix: true
-      }
+        prefix: true,
+      },
     }
 
   def self.create_from_collection(wine_list)

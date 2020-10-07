@@ -30,6 +30,7 @@ gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'pg_search'
 gem 'simple_token_authentication'
+gem 'cloudinary'
 
 group :development, :test do  gem 'pry-byebug'
   gem 'pry-rails'
