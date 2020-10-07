@@ -1,5 +1,4 @@
-json.array! @wines do |wine|
-  json.extract! wine,
+json.extract! @wine,
     :id,
     :name,
     :description,
@@ -9,5 +8,3 @@ json.array! @wines do |wine|
     :region,
     :grade,
     :maker
-end
-
