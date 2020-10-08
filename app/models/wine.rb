@@ -1,10 +1,10 @@
 class Wine < ApplicationRecord
-  include PgSearch
+  include PgSearch::Model
 
   has_one_attached :photo
 
-  validates :name, presence: true, uniqueness: true
-  validates :description, presence: true
+  # validates :name, presence: true, uniqueness: true
+  # validates :description, presence: true
 
   pg_search_scope :search_by_term, against: [:name, :region, :origin, :maker],
     using: {
