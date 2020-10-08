@@ -9,8 +9,6 @@
 # Wine.create_from_collection(wines)
 # puts "====================  Done!  ===================="
 
-# require "open-uri"
-
 # def upload_images
 #   count = 0
 #   Wine.all.each do |wine|
@@ -33,5 +31,10 @@
 # end
 
 # upload_images
+
+require "open-uri"
+# export db to JSON
+File.open("wine.json", "w") { |f| f.write Wine.all.to_json }
+
 
 

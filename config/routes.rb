@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
       resources :wines, only: [ :index, :show, :update, :create, :destroy ]
-      get 'wines/search/:query', to: 'wines#search'
+      get 'wines/name/:name', to: 'wines#search'
+      get 'wines/origin/:origin', to: 'wines#search'
+      get 'wines/region/:region', to: 'wines#search'
+      get 'wines/maker/:maker', to: 'wines#search'
     end
   end
 end

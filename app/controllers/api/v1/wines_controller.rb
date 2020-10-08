@@ -37,12 +37,19 @@ class Api::V1::WinesController < Api::V1::BaseController
     head :no_content
   end
 
-  # GET /api/v1/search/:query
   def search
-    @wines = Wine.search_by_term(params[:query])
+    if params[:name]
+      @wines = Wine.search_by_name(params[:name]) # GET/api/v1/wines/name/:name
+    elsif params[:origin]
+      @wines = Wine.search_by_origin(params[:origin]) # GET/api/v1/wines/origin/:origin
+    elsif params[:region]
+      @wines = Wine.search_by_region(params[:region]) # GET/api/v1/wines/region/:region
+    elsif params[:maker]
+      @wines = Wine.search_by_maker(params[:maker]) # GET/api/v1/wines/maker/:maker
+    end
   end
 
-    private
+  private
 
   def set_wine
     @wine = Wine.find(params[:id])
@@ -66,4 +73,4 @@ class Api::V1::WinesController < Api::V1::BaseController
     render json: { errors: @wine.errors.full_messages },
       status: :unprocessable_entity
   end
- end
+end

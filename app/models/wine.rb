@@ -3,10 +3,38 @@ class Wine < ApplicationRecord
 
   has_one_attached :photo
 
-  # validates :name, presence: true, uniqueness: true
-  # validates :description, presence: true
+  validates :name, presence: true, uniqueness: true
+  validates :description, presence: true
+  validates :origin, presence: true
+  validates :region, presence: true
+  validates :grade, presence: true
 
-  pg_search_scope :search_by_term, against: [:name, :region, :origin, :maker],
+  pg_search_scope :search_by_name, against: [:name],
+    using: {
+      tsearch: {
+        any_word: true,
+        prefix: true,
+      },
+    }
+
+  pg_search_scope :search_by_region, against: [:region],
+    using: {
+      tsearch: {
+        any_word: true,
+        prefix: true,
+      },
+    }
+
+  pg_search_scope :search_by_origin, against: [:origin],
+    using: {
+      tsearch: {
+        any_word: true,
+        prefix: true,
+      },
+    }
+
+
+  pg_search_scope :search_by_maker, against: [:maker],
     using: {
       tsearch: {
         any_word: true,

@@ -10,4 +10,3 @@ json.array! @wines do |wine|
     :grade,
     :maker
 end
-
