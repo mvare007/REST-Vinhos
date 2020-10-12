@@ -25,7 +25,7 @@ class Wine < ApplicationRecord
       },
     }
 
-  pg_search_scope :search_by_origin, against: [:origin],
+  pg_search_scope :search_by_country, against: [:country],
     using: {
       tsearch: {
         any_word: true,

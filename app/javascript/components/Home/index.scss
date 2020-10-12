@@ -1,0 +1,71 @@
+.scrollspy {
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color: #d3d3d3;
+  position: fixed;
+  height: 100%;
+  overflow: auto;
+  z-index: 1;
+  list-style-type: none;
+
+  a {
+    display: block;
+    color: black;
+    padding: 16px;
+    text-decoration: none;
+  }
+}
+
+section {
+  text-align: center;
+  margin-bottom: 50px;
+  border-bottom: 1px solid #d3d3d3;
+   h2 {
+    margin-bottom: 30px;
+  }
+  p {
+    text-align: center;
+    text-justify: inter-word;
+  }
+  pre {
+    background-color: #d3d3d3;
+    padding: 12px;
+    width: 60%;
+    margin: 16px auto;
+  }
+}
+
+/* On screens that are less than 700px wide, make the scrollspy into a topbar */
+@media screen and (max-width: 700px) {
+  .scrollspy {
+    width: 100%;
+    height: auto;
+    position: fixed;
+
+    a {
+      float: left;
+    }
+  }
+  section {
+    margin-top: 150px;
+
+    pre {
+      width: 100% !important;
+    }
+  }
+}
+
+/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
+@media screen and (max-width: 400px) {
+  .scrollspy a {
+    text-align: center;
+    float: none;
+    height: auto;
+  }
+  section {
+    margin-left: 0 !important;
+    margin-top: 200px;
+  }
+}
+
