@@ -5,9 +5,9 @@ class Wine < ApplicationRecord
 
   validates :name, presence: true, uniqueness: true
   validates :description, presence: true
-  validates :origin, presence: true
+  validates :country, presence: true
   validates :region, presence: true
-  validates :grade, presence: true
+  validates :volume, presence: true
 
   pg_search_scope :search_by_name, against: [:name],
     using: {

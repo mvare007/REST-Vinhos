@@ -19,9 +19,9 @@
 
 section {
   text-align: center;
-  margin-bottom: 50px;
+  margin-bottom: 90px;
   border-bottom: 1px solid #d3d3d3;
-   h2 {
+  h2 {
     margin-bottom: 30px;
   }
   p {
@@ -41,14 +41,14 @@ section {
   .scrollspy {
     width: 100%;
     height: auto;
-    position: fixed;
+    position: absolute;
 
     a {
       float: left;
     }
   }
   section {
-    margin-top: 150px;
+    margin-top: 180px;
 
     pre {
       width: 100% !important;
@@ -69,3 +69,9 @@ section {
   }
 }
 
+#response {
+  text-align: start;
+  width: 60%;
+  height: auto;
+  margin-top: 12px;
+}

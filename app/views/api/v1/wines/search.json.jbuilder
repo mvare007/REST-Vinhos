@@ -6,9 +6,9 @@ if @wines
       :description,
       :image_url,
       :variant,
-      :origin,
+      :country,
       :region,
-      :grade,
+      :volume,
       :maker
   end
 else
