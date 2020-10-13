@@ -3,7 +3,6 @@ require 'nokogiri'
 require 'open-uri'
 
 class Scraper
-
   def scrape_wine_urls
     page_count = 1
     wine_urls = []
@@ -25,12 +24,11 @@ class Scraper
     scrape_wine_pages(wine_urls)
   end
 
-
   def scrape_wine_pages(wine_urls)
     wines = []
 
     wine_urls.each do |url|
-      sleep 8
+      sleep(8)
       doc = Nokogiri::HTML(open(url, "User-Agent" => "Googlebot"))
       wine_name = doc.css('.base').children.text
       wine_description = doc.css('.product-description-height').text
@@ -44,14 +42,14 @@ class Scraper
       wine_image_url = doc.css('.gallery_main_image').css('img').attribute('src').value
 
       wine_info = {
-          name: wine_name,
-          description: wine_description,
-          variant: wine_variant,
-          volume: wine_grade,
-          country: wine_country_of_origin,
-          region: wine_region,
-          maker: wine_maker,
-          image_url: wine_image_url
+        name: wine_name,
+        description: wine_description,
+        variant: wine_variant,
+        volume: wine_grade,
+        country: wine_country_of_origin,
+        region: wine_region,
+        maker: wine_maker,
+        image_url: wine_image_url,
       }
       puts wine_info
 
@@ -61,7 +59,6 @@ class Scraper
 
     wines
   end
-
 end
 
 scrape = Scraper.new

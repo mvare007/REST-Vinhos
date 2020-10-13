@@ -13,6 +13,8 @@ SimpleForm.setup do |config|
   # wrapper, change the order or even add your own to the
   # stack. The options given below are used to wrap the
   # whole input.
+  config.input_mappings = { /country/ => :string }
+
   config.wrappers :default, class: :input,
     hint_class: :field_with_hint, error_class: :field_with_errors, valid_class: :field_without_errors do |b|
     ## Extensions enabled by default
@@ -24,6 +26,7 @@ SimpleForm.setup do |config|
     # Determines whether to use HTML5 (:email, :url, ...)
     # and required attributes
     b.use :html5
+
 
     # Calculates placeholders automatically from I18n
     # You can also pass a string as f.input placeholder: "Placeholder"
