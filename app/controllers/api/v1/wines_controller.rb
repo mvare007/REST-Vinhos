@@ -40,8 +40,8 @@ class Api::V1::WinesController < Api::V1::BaseController
   def search
     if params[:name]
       @wines = Wine.search_by_name(params[:name]) # GET/api/v1/wines/name/:name
-    elsif params[:origin]
-      @wines = Wine.search_by_origin(params[:origin]) # GET/api/v1/wines/origin/:origin
+    elsif params[:country]
+      @wines = Wine.search_by_country(params[:country]) # GET/api/v1/wines/country/:country
     elsif params[:region]
       @wines = Wine.search_by_region(params[:region]) # GET/api/v1/wines/region/:region
     elsif params[:maker]

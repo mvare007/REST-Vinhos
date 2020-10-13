@@ -5,8 +5,8 @@ json.array! @wines do |wine|
     :description,
     :image_url,
     :variant,
-    :origin,
+    :country,
     :region,
-    :grade,
+    :volume,
     :maker
 end

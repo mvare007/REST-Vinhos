@@ -47,11 +47,10 @@ class Scraper
           name: wine_name,
           description: wine_description,
           variant: wine_variant,
-          grade: wine_grade,
-          origin: wine_country_of_origin,
+          volume: wine_grade,
+          country: wine_country_of_origin,
           region: wine_region,
           maker: wine_maker,
-          serv_temp: wine_serve_temp,
           image_url: wine_image_url
       }
       puts wine_info

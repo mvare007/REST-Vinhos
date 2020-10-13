@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :wines, only: [ :index, :show, :update, :create, :destroy ]
       get 'wines/name/:name', to: 'wines#search'
-      get 'wines/origin/:origin', to: 'wines#search'
+      get 'wines/country/:country', to: 'wines#search'
       get 'wines/region/:region', to: 'wines#search'
       get 'wines/maker/:maker', to: 'wines#search'
     end
