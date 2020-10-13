@@ -3,7 +3,7 @@ import Scrollspy from "react-scrollspy";
 import "./index.scss";
 
 const Home = () => {
-  const baseUrl = "https://localhost:3000/";
+  const baseUrl = "http://localhost:3000/";
   return (
     <div className="container-fluid">
       <div className="row">
@@ -11,48 +11,69 @@ const Home = () => {
           <Scrollspy
             className="scrollspy"
             items={[
-              "About",
-              "API Endpoints",
-              "All",
-              "Name",
-              "Country",
-              "Region",
-              "Maker",
-              "Id",
-              "Response Example",
-              "License",
+              "about",
+              "endpoints",
+              "all",
+              "name",
+              "country",
+              "region",
+              "maker",
+              "by-id",
+              "response-example",
+              "license",
             ]}
             currentClassName="is-current"
           >
-            <li>
-              <a href="#About">About</a>
+            <li className="font-weight-bold">
+              <a href="#about">ABOUT</a>
+            </li>
+            <li className="font-weight-bold">
+              <a href="#endpoints">API ENDPOINTS</a>
             </li>
             <li>
-              <a href="#section-2">section 2</a>
+              <a href="#all">ALL</a>
             </li>
             <li>
-              <a href="#section-3">section 3</a>
+              <a href="#name">NAME</a>
+            </li>
+            <li>
+              <a href="#country">COUNTRY</a>
+            </li>
+            <li>
+              <a href="#region">REGION</a>
+            </li>
+            <li>
+              <a href="#maker">WINEMAKER</a>
+            </li>
+            <li>
+              <a href="#by-id">BY ID</a>
+            </li>
+            <li className="font-weight-bold">
+              <a href="#response-example">RESPONSE EXAMPLE</a>
+            </li>
+            <li className="font-weight-bold">
+              <a href="#license">LICENSE</a>
             </li>
           </Scrollspy>
         </div>
         <div className="col-sm-12 col-md-8 col-lg-8">
-          <section id="About">
+          <section id="about">
             <h2>ABOUT</h2>
             <p>
-              Get data on over 3200+ wines via a RESTful api in Portuguese. The
+              Get data on over 3200 wines via a RESTful api in Portuguese. The
               main purpose of this project is to facilitate the creation of
               digital solutions by any developer so as to innovate and further
               propel the portuguese wine industry.
             </p>
           </section>
-          <section id="API Endpoints">
+          <section id="endpoints">
             <h2>API ENDPOINTS</h2>
             <p>
               Below are described the REST endpoints available that you can use
               to search for wines.
             </p>
           </section>
-          <section id="All">
+          <section id="all">
             <h2>ALL</h2>
             <pre>
               <code>{baseUrl}api/v1/wines</code>
@@ -86,7 +107,7 @@ const Home = () => {
             </pre>
           </section>
           <section id="maker">
-            <h2>MAKER</h2>
+            <h2>WINEMAKER</h2>
             <p>Search wines by maker. It can be a partial name.</p>
             <pre>
               <code>
@@ -94,8 +115,8 @@ const Home = () => {
               </code>
             </pre>
           </section>
-          <section id="Id">
-            <h2>ID</h2>
+          <section id="by-id">
+            <h2>BY ID</h2>
             <p>Search wines by the id number.</p>
             <pre>
               <code>
@@ -112,15 +133,15 @@ const Home = () => {
               <code>
                 {`
                 {
-                  "id":1400,
-                  "name":"2017 Quinta Nova de Nossa Senhora do Carmo Mirabilis tinto",
-                  "description":"A Quinta Nova de Nossa Senhora do Carmo é um local de extrema beleza, no coração do Douro, e propriedade da família Amorim desde 1999. A ligação da família ao vinho vem de longe, através da sua ligação às casas exportadoras de Vila Nova de Gaia, por via do negócio da cortiça, mas nessa data esta ligação resultou na concretização de um sonho e o projecto está hoje nas mãos da 4ª geração da família. Com uma história superior a 250 anos, a quinta exibe uma traça conservada e o edifício original da adega de 1764, após intervenções a cargo do Arquitecto Arnaldo Barbosa.",
-                  "image_url":"http://res.cloudinary.com/dhlnraejo/image/upload/n0alkwfpmks3ytt8qfnjjmwyp4dt",
-                  "variant":"Tinto",
-                  "country":"Portugal",
-                  "region":"Douro",
-                  "volume":14.0,
-                  "maker":"Quinta Nova"
+                   "id":1400,
+                   "name":"2017 Quinta Nova de Nossa Senhora do Carmo Mirabilis tinto",
+                   "description":"A Quinta Nova de Nossa Senhora do Carmo é um local de extrema beleza, no coração do Douro, e propriedade da família Amorim desde 1999. A ligação da família ao vinho vem de longe, através da sua ligação às casas exportadoras de Vila Nova de Gaia, por via do negócio da cortiça, mas nessa data esta ligação resultou na concretização de um sonho e o projecto está hoje nas mãos da 4ª geração da família. Com uma história superior a 250 anos, a quinta exibe uma traça conservada e o edifício original da adega de 1764, após intervenções a cargo do Arquitecto Arnaldo Barbosa.",
+                   "image_url":"http://res.cloudinary.com/dhlnraejo/image/upload/n0alkwfpmks3ytt8qfnjjmwyp4dt",
+                   "variant":"Tinto",
+                   "country":"Portugal",
+                   "region":"Douro",
+                   "volume":14.0,
+                   "maker":"Quinta Nova"
                 }`}
               </code>
             </pre>

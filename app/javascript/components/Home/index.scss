@@ -4,16 +4,16 @@
   width: 200px;
   background-color: #d3d3d3;
   position: fixed;
-  height: 100%;
-  overflow: auto;
   z-index: 1;
   list-style-type: none;
 
   a {
     display: block;
-    color: black;
+    text-align: center;
+    color: #2a2929;
     padding: 16px;
     text-decoration: none;
+    font-size: calc(0.5em + 0.7vmin);
   }
 }
 
@@ -27,25 +27,20 @@ section {
   p {
     text-align: center;
     text-justify: inter-word;
+    margin: 30px auto;
+    width: 70%;
   }
   pre {
     background-color: #d3d3d3;
     padding: 12px;
     width: 60%;
-    margin: 16px auto;
+    margin: 80px auto;
   }
 }
 
-/* On screens that are less than 700px wide, make the scrollspy into a topbar */
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 768px) {
   .scrollspy {
-    width: 100%;
-    height: auto;
-    position: absolute;
-
-    a {
-      float: left;
-    }
+    visibility: hidden;
   }
   section {
     margin-top: 180px;
@@ -56,16 +51,13 @@ section {
   }
 }
 
-/* On screens that are less than 400px, display the bar vertically, instead of horizontally */
 @media screen and (max-width: 400px) {
-  .scrollspy a {
-    text-align: center;
-    float: none;
-    height: auto;
+  .scrollspy {
+    visibility: hidden;
   }
   section {
     margin-left: 0 !important;
-    margin-top: 200px;
+    margin-top: 150px;
   }
 }
 
@@ -75,3 +67,8 @@ section {
   height: auto;
   margin-top: 12px;
 }
+
+.is-current {
+  background:#adabab;
+}
+
