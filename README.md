@@ -1,6 +1,4 @@
 
-    <div>
-          <section id="about">
             <h2>ABOUT</h2>
             <p>
               Get data on over 3200 wines via a RESTful api in Portuguese. All
@@ -9,21 +7,15 @@
               any developer so as to innovate and further propel the portuguese
               wine industry.
             </p>
-          </section>
-          <section id="endpoints">
             <h2>API ENDPOINTS</h2>
             <p>
               Below are described the REST endpoints available that you can use
               to search for wines.
             </p>
-          </section>
-          <section id="all">
             <h2>ALL</h2>
             <pre>
               <code>{baseUrl}api/v1/wines</code>
             </pre>
-          </section>
-          <section id="name">
             <h2>NAME</h2>
             <p>Search wines by name. It can be a partial name.</p>
             <pre>
@@ -31,8 +23,6 @@
                 {baseUrl}api/v1/wines/name/{`{name}`}
               </code>
             </pre>
-          </section>
-          <section id="country">
             <h2>COUNTRY</h2>
             <p>Search wines by country.</p>
             <pre>
@@ -40,8 +30,6 @@
                 {baseUrl}api/v1/wines/country/{`{country}`}
               </code>
             </pre>
-          </section>
-          <section id="region">
             <h2>REGION</h2>
             <p>Search wines by region. It can be a partial name.</p>
             <pre>
@@ -49,8 +37,6 @@
                 {baseUrl}api/v1/wines/region/{`{region}`}
               </code>
             </pre>
-          </section>
-          <section id="maker">
             <h2>WINEMAKER</h2>
             <p>Search wines by maker. It can be a partial name.</p>
             <pre>
@@ -58,8 +44,6 @@
                 {baseUrl}api/v1/wines/maker/{`{maker}`}
               </code>
             </pre>
-          </section>
-          <section id="by-id">
             <h2>BY ID</h2>
             <p>Search wines by the id number.</p>
             <pre>
@@ -67,8 +51,6 @@
                 {baseUrl}api/v1/wines/{`{:id}`}
               </code>
             </pre>
-          </section>
-          <section id="response-example">
             <h2>RESPONSE EXAMPLE</h2>
             <pre>
               <code>{baseUrl}api/v1/wines/1400</code>
@@ -89,12 +71,8 @@
                 }`}
               </code>
             </pre>
-          </section>
-          <section id="license">
             <h2>LICENSE</h2>
             <a href="https://www.mozilla.org/en-US/MPL/2.0/">
               Mozilla Public License
             </a>{" "}
             MPL 2.0
-          </section>
-        </div>
