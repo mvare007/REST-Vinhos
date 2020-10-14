@@ -20,6 +20,7 @@ const Home = () => {
               "maker",
               "by-id",
               "response-example",
+              "contribute",
               "license",
             ]}
             currentClassName="is-current"
@@ -50,6 +51,9 @@ const Home = () => {
             </li>
             <li className="font-weight-bold">
               <a href="#response-example">RESPONSE EXAMPLE</a>
+            </li>
+            <li className="font-weight-bold">
+              <a href="#contribute">CONTRIBUTE</a>
             </li>
             <li className="font-weight-bold">
               <a href="#license">LICENSE</a>
@@ -146,6 +150,10 @@ const Home = () => {
                 }`}
               </code>
             </pre>
+          </section>
+          <section id="contribute">
+            <h2>CONTRIBUTE</h2>
+            <a href="/requests/new">Contribute by adding more wine data to the api.</a>
           </section>
           <section id="license">
             <h2>LICENSE</h2>
