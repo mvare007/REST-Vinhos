@@ -1,6 +1,5 @@
 import React from "react";
 import Scrollspy from "react-scrollspy";
-import "./index.scss";
 
 const Home = () => {
   const baseUrl = "https://restvinhos.herokuapp.com/";
