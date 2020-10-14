@@ -1,6 +1,6 @@
-require 'pry'
-require 'nokogiri'
-require 'open-uri'
+# require 'pry'
+# require 'nokogiri'
+# require 'open-uri'
 
 class Scraper
   def scrape_wine_urls
@@ -60,7 +60,3 @@ class Scraper
     wines
   end
 end
-
-scrape = Scraper.new
-puts "Scraping..."
-scrape.scrape_wine_urls
