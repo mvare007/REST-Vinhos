@@ -296,7 +296,7 @@ PLATFORMS
 
 DEPENDENCIES
   autoprefixer-rails
-  bootsnap (>= 1.4.2)
+  bootsnap
   byebug
   capybara (>= 2.15)
   cloudinary (~> 1.16.0)
