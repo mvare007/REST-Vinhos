@@ -42,12 +42,12 @@ wines = ActiveSupport::JSON.decode(File.read("wine.json"))
 
 wines.each do |wine|
   Wine.create!(
-    name: wine.name,
-    variant: wine.variant,
-    maker: wine.maker,
-    volume: wine.volume,
-    country: wine.country,
-    image_url: wine.image_url,
-    description: wine.description
+    name: wine['name'],
+    variant: wine['variant'],
+    maker: wine['maker'],
+    volume: wine['volume'].to_f,
+    country: wine['country'],
+    image_url: wine['image_url'],
+    description: wine['description']
   )
 end
