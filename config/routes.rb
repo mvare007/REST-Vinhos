@@ -2,6 +2,8 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
+  resources :requests, except: [ :show ]
+
   namespace :api, defaults: { format: :json } do
     namespace :v1 do
       resources :wines, only: [ :index, :show, :update, :create, :destroy ]

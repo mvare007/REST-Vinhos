@@ -60,10 +60,11 @@ const Home = () => {
           <section id="about">
             <h2>ABOUT</h2>
             <p>
-              Get data on over 3200 wines via a RESTful api in Portuguese. The
-              main purpose of this project is to facilitate the creation of
-              digital solutions by any developer so as to innovate and further
-              propel the portuguese wine industry.
+              Get data on over 3200 wines via a RESTful api in Portuguese. All
+              the data was obtained by scraping. The main purpose of
+              this project is to facilitate the creation of digital solutions by
+              any developer so as to innovate and further propel the portuguese
+              wine industry.
             </p>
           </section>
           <section id="endpoints">
