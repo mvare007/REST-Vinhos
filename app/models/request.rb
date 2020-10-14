@@ -12,6 +12,6 @@ class Request < ApplicationRecord
               numericality: { only_float: true }
   validates :variant,
               presence: true,
-              inclusion: { in: %w(Tinto Branco Rosé Verde Espumante Porto Madeira Moscatel Sobremesa),
+              inclusion: { in: %w(Tinto Branco Rosé Verde Espumante Sobremesa),
                            message: "%{value} is not a valid variant" }
 end

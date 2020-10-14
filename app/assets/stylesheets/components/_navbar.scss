@@ -1,5 +1,14 @@
 .navbar {
-  padding: 1.5rem 1rem;
-  border-bottom: 1px solid #492929;
+  padding: 1rem 1rem;
+  border-bottom: 1px solid #dabbbb;
   margin-bottom: 2rem;
+  background: #f1e0e0;
+}
+
+.fa-github {
+  font-size: calc(1.3em + 0.7vmin);
+  color: rgb(104, 96, 96);
+  &:hover {
+    opacity: 0.8;
+  }
 }

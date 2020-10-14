@@ -8,7 +8,7 @@ class Wine < ApplicationRecord
   validates :country, presence: true
   validates :region, presence: true
   validates :volume, presence: true
-  validates :variant, inclusion: { in: %w(Tinto Branco Rosé Verde Espumante Porto Madeira Moscatel Sobremesa),
+  validates :variant, inclusion: { in: %w(Tinto Branco Rosé Verde Espumante Sobremesa),
                                    message: "%{value} is not a valid variant" }
 
   pg_search_scope :search_by_name, against: [:name],

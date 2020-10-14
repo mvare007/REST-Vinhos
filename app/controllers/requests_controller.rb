@@ -1,7 +1,9 @@
 class RequestsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:new, :create]
+  before_action :set_request, only: [:edit, :update, :destroy]
 
   def index
+    @request = Request.all
   end
 
   def new
@@ -9,15 +11,24 @@ class RequestsController < ApplicationController
   end
 
   def create
+    @request = Request.create(request_params)
+    if @request.save
+      redirect_to(root_path)
+      flash[:notice] = "Thank you for your contribution! It will be reviewed and added to the api soon."
+    else
+      render(:new)
+    end
   end
 
   def edit
   end
 
   def update
+    @request.update(request_params)
   end
 
   def destroy
+    @request.destroy
   end
 
   private
