@@ -44,9 +44,10 @@ wines.each do |wine|
   Wine.create!(
     name: wine['name'],
     variant: wine['variant'],
-    maker: wine['maker'],
     volume: wine['volume'].to_f,
+    maker: wine['maker'],
     country: wine['country'],
+    region: wine['region'],
     image_url: wine['image_url'],
     description: wine['description']
   )
