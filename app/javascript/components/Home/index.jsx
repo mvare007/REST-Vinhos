@@ -3,7 +3,7 @@ import Scrollspy from "react-scrollspy";
 import "./index.scss";
 
 const Home = () => {
-  const baseUrl = "http://localhost:3000/";
+  const baseUrl = "https://restvinhos.herokuapp.com/";
   return (
     <div className="container-fluid">
       <div className="row">
