@@ -1,3 +1,5 @@
+require "open-uri"
+
 # Wine.destroy_all
 
 # scrape = Scraper.new
@@ -7,7 +9,7 @@
 # puts "Almost there..."
 # puts wines
 # Wine.create_from_collection(wines)
-# puts "====================  Done!  ===================="
+# puts "========  Done!  ======== "
 
 # def upload_images
 #   count = 0
@@ -32,9 +34,20 @@
 
 # upload_images
 
-require "open-uri"
+
 # export db to JSON
-File.open("wine.json", "w") { |f| f.write Wine.all.to_json }
+# File.open("wine.json", "w") { |f| f.write Wine.all.to_json }
 
+wines = ActiveSupport::JSON.decode(File.read("wine.json"))
 
-
+wines.each do |wine|
+  Wine.create!(
+    name: wine.name,
+    variant: wine.variant,
+    maker: wine.maker,
+    volume: wine.volume,
+    country: wine.country,
+    image_url: wine.image_url,
+    description: wine.description
+  )
+end
