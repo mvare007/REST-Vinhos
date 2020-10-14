@@ -3,13 +3,13 @@ class Wine < ApplicationRecord
 
   has_one_attached :photo
 
-  validates :name, presence: true, uniqueness: true
-  validates :description, presence: true
-  validates :country, presence: true
-  validates :region, presence: true
-  validates :volume, presence: true
-  validates :variant, inclusion: { in: %w(Tinto Branco Rosé Verde Espumante Sobremesa),
-                                   message: "%{value} is not a valid variant" }
+  # validates :name, presence: true, uniqueness: true
+  # validates :description, presence: true
+  # validates :country, presence: true
+  # validates :region, presence: true
+  # validates :volume, presence: true
+  # validates :variant, inclusion: { in: %w(Tinto Branco Rosé Verde Espumante Sobremesa),
+  #                                  message: "%{value} is not a valid variant" }
 
   pg_search_scope :search_by_name, against: [:name],
     using: {
