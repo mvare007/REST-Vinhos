@@ -1,43 +1,46 @@
-<div class="container w-50">
-  <div class="text-center m-5">
-    <h2 class="m-3">Add a Wine to REST Vinhos</h2>
-    <p>The submission will be reviewed and subsequently added to the api.</p>
-  </div>
-
-  <%= simple_form_for @request do |f| %>
+<div class="container">
   <div class="row">
-    <div class="col-sm-12 col-lg-6">
+    <div class="col-12 text-center my-5 mx-auto">
+      <h2 class="mb-3">Add a Wine to REST Vinhos</h2>
+      <p>The submission will be reviewed and subsequently added to the api</p>
+    </div>
+    <div class="col-sm-12 col-md-6 col-lg-6">
+      <%= simple_form_for @request do |f| %>
       <%= f.input :name ,
           placeholder: '2015 Cabeça de Burro Reserva',
           hint: 'Year of the crop followed by the name of the wine.' %>
     </div>
-    <div class="col-sm-12 col-lg-6">
+    <div class="col-sm-12 col-md-6 col-lg-6">
       <%= f.input :variant,
           collection: %i[Tinto Branco Rosé Verde Espumante Sobremesa]  %>
     </div>
-    <div class="col-sm-12 col-lg-6">
+    <div class="col-sm-12 col-md-6 col-lg-6">
       <%= f.input :maker %>
     </div>
-    <div class="col-sm-4 col-lg-3">
+    <div class="col-sm-4 col-md-3 col-lg-3">
       <%= f.input :volume %>
     </div>
-    <div class="col-sm-8 col-lg-2">
+    <div class="col-sm-8 col-md-2 col-lg-2 form-group">
       <%= f.label :photo %>
-      <%= f.file_field :photo %>
+      <%= f.file_field :photo,
+          class: 'form-control-file' %>
     </div>
-    <div class="col-sm-12 col-lg-6">
+    <div class="col-sm-12 col-md-6 col-lg-6">
       <%= f.input :country,
           placeholder: ' E.g. Portugal' %>
     </div>
-    <div class="col-sm-12 col-lg-6">
+    <div class="col-sm-12 col-md-6 col-lg-6">
       <%= f.input :region,
           placeholder: ' E.g. Douro' %>
     </div>
-    <div class="col-lg-12">
-      <%= f.input :description %>
+    <div class="col-12">
+      <%= f.input :description,
+          placeholder: 'The text in the back label of the bottle.' %>
     </div>
-    <div class="col-lg-12">
-      <%= f.button :submit, 'Add Wine to API', class:'btn btn-block btn-secondary w-25 mt-4 mx-auto' %>
+    <div class="col-12">
+      <%= f.button :submit,
+          'Submit',
+          class:'btn btn-block btn-secondary w-25 mt-4 mx-auto' %>
     </div>
     <% end %>
   </div>
