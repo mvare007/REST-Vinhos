@@ -3,6 +3,7 @@
 # require 'open-uri'
 
 class Scraper
+
   def scrape_wine_urls
     page_count = 1
     wine_urls = []
