@@ -3,7 +3,8 @@ class RequestsController < ApplicationController
   before_action :set_request, only: [:edit, :update, :destroy]
 
   def index
-    @request = Request.all
+    @requests = Request.all
+    authorize @requests
   end
 
   def new
@@ -13,10 +14,9 @@ class RequestsController < ApplicationController
   def create
     @request = Request.create(request_params)
     if @request.save
-      redirect_to(root_path)
-      flash[:notice] = "Thank you for your contribution! It will be reviewed and added to the api soon."
+      redirect_to root_path, notice: "Thank you for your contribution! It will be reviewed and added to the api soon."
     else
-      render(:new)
+      render :new
     end
   end
 
@@ -25,10 +25,13 @@ class RequestsController < ApplicationController
 
   def update
     @request.update(request_params)
+    authorize @request
   end
 
   def destroy
     @request.destroy
+    authorize @request
+    redirect_to requests_path if @request.destroy
   end
 
   private
