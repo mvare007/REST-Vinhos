@@ -5,8 +5,8 @@ require File.expand_path('../config/environment', __dir__)
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
-require 'capybara/rspec'
 require 'capybara/rails'
+require 'capybara/rspec'
 require 'devise'
 
 # Add additional requires below this line. Rails is not loaded until this point!
@@ -60,6 +60,14 @@ RSpec.configure do |config|
       with.library :rails
     end
   end
+
+  Capybara.register_driver :headless_chrome do |app|
+    options = Selenium::WebDriver::Chrome::Options.new(args: %w[no-sandbox headless disable-gpu window-size=1400,900])
+    Capybara::Selenium::Driver.new(app, browser: :chrome, options: options)
+  end
+
+  Capybara.save_path = Rails.root.join('tmp/capybara')
+  Capybara.javascript_driver = :headless_chrome
 
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
   # config.fixture_path = "#{::Rails.root}/spec/fixtures"

@@ -357,10 +357,10 @@ DEPENDENCIES
   simple_token_authentication
   spring
   spring-watcher-listen (~> 2.0.0)
-  turbolinks (~> 5)
+  turbolinks (~> 5.2.0)
   tzinfo-data
   web-console (>= 3.3.0)
-  webdrivers
+  webdrivers (~> 4.0)
   webpacker (~> 4.0)
 
 RUBY VERSION
