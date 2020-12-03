@@ -5,6 +5,7 @@
       <p>The submission will be reviewed and subsequently added to the api</p>
     </div>
     <div class="col-sm-12 col-md-6 col-lg-6">
+
       <%= simple_form_for @request do |f| %>
 
       <%= f.input :name ,
@@ -23,7 +24,7 @@
     </div>
     <div class="col-sm-8 col-md-2 col-lg-2 form-group">
       <%= f.label :photo %>
-      <%= f.file_field :photo,
+      <%= f.file_field :image_url,
           class: 'form-control-file' %>
     </div>
     <div class="col-sm-12 col-md-6 col-lg-6">

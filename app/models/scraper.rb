@@ -39,7 +39,6 @@ class Scraper
       wine_country_of_origin = wine_specs[1].to_s.strip
       wine_region = wine_specs[4].to_s.strip
       wine_maker = wine_specs[5].to_s.strip
-      wine_serve_temp = wine_specs[6].to_s.strip
       wine_image_url = doc.css('.gallery_main_image').css('img').attribute('src').value
 
       wine_info = {

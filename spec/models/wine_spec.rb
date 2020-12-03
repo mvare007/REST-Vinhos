@@ -1,49 +1,18 @@
-# Testing Wine validations
 require 'rails_helper'
 
 RSpec.describe Wine, type: :model do
-  subject {
-    wine = Wine.new(name: "Test", description: "A test wine",
-      image_url: "https://en.calameo.com/read/00388795647118aa4ae2a", variant: "Tinto",
-      country: "Portugal", region: "Alentejo", volume: 12.5, maker: "Cartuxa")
-  }
 
-  before { subject.save }
-
-  it "Name should be present" do
-    subject.name = nil
-    expect(subject).to_not be_valid
-  end
-
-  it "Name should be unique" do
-    wine = Wine.new(name: "Test", description: "A test wine",
-      image_url: "https://en.calameo.com/read/00388795647118aa4ae2a", variant: "Tinto",
-      country: "Portugal", region: "Alentejo", volume: 12.5, maker: "Cartuxa")
-    expect(wine).to_not be_valid
-  end
-
-  it "Description should be present" do
-    subject.description = nil
-    expect(subject).to_not be_valid
-  end
-
-  it "Country should be present" do
-    subject.country = nil
-    expect(subject).to_not be_valid
-  end
-
-  it "Region should be present" do
-    subject.region = nil
-    expect(subject).to_not be_valid
-  end
-
-  it "Volume should be present" do
-    subject.volume = nil
-    expect(subject).to_not be_valid
-  end
-
-  it "Variant should be included in Tinto, Branco, Rosé, Verde, Espumante or Sobremesa" do
-    subject.variant = "azul"
-    expect(subject).to_not be_valid
+  describe 'validations' do
+    it { should validate_presence_of(:name) }
+    it { should validate_presence_of(:description) }
+    it { should validate_presence_of(:country) }
+    it { should validate_presence_of(:region) }
+    it { should validate_presence_of(:volume) }
+    it { should validate_uniqueness_of(:name) }
+    it { should validate_inclusion_of(:variant).in_array(%w(Tinto Branco Rosé Verde Espumante Sobremesa)) }
+    it "should validate that description cannot be bigger than 1000 characters long" do
+      wine = FactoryBot.build(:wine, description: Faker::Lorem.characters(number: 1001))
+      expect(wine).to_not be_valid
+    end
   end
 end
