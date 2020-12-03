@@ -28,6 +28,9 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'factory_bot_rails'
+  gem 'faker'
+  gem 'capybara'
+  gem 'launchy'
 end
 
 group :development do
@@ -41,13 +44,11 @@ group :development do
 end
 
 group :test do
-  gem 'rspec-rails'
   gem 'selenium-webdriver'
-  gem 'capybara'
-  gem 'webdrivers'
-  gem 'launchy'
   gem 'shoulda-matchers', '~>3.1'
   gem 'database_cleaner-active_record'
+  gem 'webdrivers'
+  gem 'rspec-rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
