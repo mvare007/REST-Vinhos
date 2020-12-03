@@ -7,7 +7,7 @@ gem 'rails', '~> 6.0.3', '>= 6.0.3.3'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 4.1'
 gem 'webpacker', '~> 4.0'
-gem 'turbolinks', '~> 5'
+gem 'turbolinks', '~> 5.2.0'
 gem 'jbuilder', '~> 2.7'
 gem 'redis', '~> 4.0'
 gem 'bootsnap', '>= 1.4.2', require: false
@@ -30,6 +30,7 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'capybara'
+  gem 'webdrivers', '~> 4.0'
   gem 'launchy'
 end
 
@@ -47,7 +48,6 @@ group :test do
   gem 'selenium-webdriver'
   gem 'shoulda-matchers', '~>3.1'
   gem 'database_cleaner-active_record'
-  gem 'webdrivers'
   gem 'rspec-rails'
 end
 
